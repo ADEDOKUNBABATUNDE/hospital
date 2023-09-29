@@ -1,0 +1,61 @@
+{% extends 'admin_base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+{% include 'messages.html'%}
+<head>
+  
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading mt-4 mb-5">
+      <h4 class="panel-title">Doctors</h4>
+    </div>
+    <table class="table table-hover"style="border: 1px solid rgb(105, 105, 105);" >
+      <thead class="bg-primary">
+        <tr>
+
+          <th  style="font-weight: 900;">Name</th>
+          <!-- <th>Profile Picture</th> -->
+          <th  style="font-weight: 900;">mobile</th>
+          <th  style="font-weight: 900;">Address</th>
+          <th  style="font-weight: 900;">specialization</th>
+          <th  style="font-weight: 900;">Update</th>
+          <th  style="font-weight: 900;">Delete</th>
+        </tr>
+      </thead>
+   {% for d in doctors %}
+      <tr>
+        <td> {{d.name}}</td>
+        <!-- <td> <img src="{{d.image.url}}" alt="Profile Pic" height="40px" width="40px" /> </td> -->
+        <td>{{d.mobile}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.specialization}}</td>
+        <td><a class="btn btn-primary btn-xs" href="{% url 'admin_update_d' d.id %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'admin_update_d' d.id %}"><span class="glyphicon glyphicon-trash"></span>Delete </a></td>
+      </tr>
+     {% endfor %}
+    </table>
+   
+  </div>
+</div>
+
+
+{% endblock %}

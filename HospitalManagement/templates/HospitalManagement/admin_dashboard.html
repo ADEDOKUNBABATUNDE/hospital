@@ -1,0 +1,136 @@
+{% extends 'admin_base.html' %}
+
+
+{% load static %}
+
+
+
+
+
+
+
+{% block main %}
+
+
+
+
+
+
+<div class="container  mx-auto">
+   
+    <div class="market-updates  d-md-d-block  ">
+        <div class="row">
+            <div class="col-md-6 col-lg-4  market-update-gd mb-4 ">
+                <div class="market-update-block clr-block-1">
+                  <div class="col-md-8 market-update-left">
+                    <h3>{{doctorcount}}</h3>
+                    <h4>Total Doctor</h4>
+                    <p>Approval Required : {{pendingdoctorcount}}</p>
+                  </div>
+                  <div class="col-md-4 market-update-right">
+                    <i class="fa fa-user-md"></i>
+                  </div>
+                  <div class="clearfix"> </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4  market-update-gd mb-4">
+                <div class="market-update-block clr-block-2">
+                  <div class="col-md-8 market-update-left">
+                    <h3>{{patientcount}}</h3>
+                    <h4>Total Patient</h4>
+                    <p>Wants to Admit : {{pendingpatientcount}}</p>
+                  </div>
+                  <div class="col-md-4 market-update-right">
+                    <i class="fa fa-user-o"></i>
+                  </div>
+                  <div class="clearfix"> </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4  market-update-gd mb-4">
+                <div class="market-update-block clr-block-3">
+                  <div class="col-md-8 market-update-left">
+                    <h3>{{appointmentcount}}</h3>
+                    <h4>Total Appointment</h4>
+                    <p>Approve Appointments :{{pendingappointmentcount}} </p>
+                  </div>
+                  <div class="col-md-4 col-sm-12 market-update-right">
+                    <i class="fa fa-calendar"> </i>
+                  </div>
+                  <div class="clearfix"> </div>
+                </div>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+
+        </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary col-lg-6 col-md-12 col-sm-12" >
+      <div class="panel-heading" style="text-align:center;">
+        <h6 class="panel-title">Recent Doctors</h6>
+      </div>
+      <table class="table table-hover table-striped" id="dev-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>specialization</th>
+            <th>Contact</th>
+            <th>Status</th>
+
+          </tr>
+        </thead>
+        {% for d in doctors %}
+        <tr>
+          <td> {{d.name}}</td>
+          <td>{{d.specialization}}</td>
+          <td>{{d.mobile}}</td>
+          {%if d.status%}
+          <td> <span class="label label-primary">Permanent</span></td>
+          {% else %}
+          <td> <span class="label label-success">On Hold</span></td>
+          {% endif %}
+
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="panel panel-primary col-lg-6 col-md-12 col-sm-12" >
+      <div class="panel-heading" style="text-align:center;">
+        <h6 class="panel-title">Recent Patient</h6>
+      </div>
+      <table class="table table-hover table-striped" id="dev-table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Symptoms</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Status</th>
+
+          </tr>
+        </thead>
+        {% for p in patients %}
+        <tr>
+          <td> {{p.name}}</td>
+          <td>{{p.symptoms}}</td>
+          <td>{{p.mobile}}</td>
+          <td>{{p.address}}</td>
+          {% if p.status %}
+          <td> <span class="label label-primary">Admitted</span></td>
+          {% else %}
+          <td> <span class="label label-success">On Hold</span></td>
+          {% endif %}
+
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br>
+
+{% endblock %}

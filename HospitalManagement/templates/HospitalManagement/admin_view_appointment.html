@@ -1,0 +1,52 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+
+{% block main %}
+
+<head>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading mt-4 mb-5">
+      <h4 class="panel-title">Appointments</h4>
+    </div>
+    <table class="table table-hover" id="dev-table" style="border: 1px solid rgb(105, 105, 105);">
+      <thead class="bg-primary ">
+        <tr>
+          <th style="font-weight: 900;">Doctor Name</th>
+          <th style="font-weight: 900;">Patient Name</th>
+          <th style="font-weight: 900;">Description</th>
+          <th style="font-weight: 900;">Date</th>
+          <th style="font-weight: 900;">Time</th>
+        </tr>
+      </thead>
+      {% for a in appointments %}
+      <tr>
+        <td> {{a.doctor}}</td>
+        <td>{{a.patient}}</td>
+        <td>{{a.description}}</td>
+        <td>{{a.appointmentdate}}</td>
+        <td>{{a.appointmenttime}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+
+{% endblock  %}

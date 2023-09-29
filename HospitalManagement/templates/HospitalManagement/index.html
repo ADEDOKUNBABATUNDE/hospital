@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+{% include 'messages.html'%}
+<style>
+   h2 .title-v2{
+    left: 0;
+	width: 70px;
+	height: 2px;
+	content: " ";
+	bottom: -10px;
+	background:#0d6efd;
+	position: absolute;
+    }
+</style>
+
+ <br><br><br><br><br>
+<div class="container content-md welcomeSection bg-white">
+    <div class="row section1">
+    <div class="col-md-6" style="margin-bottom: 40px;" style="border:2px solid black">
+        <h2 class="title-v2">WELCOME TO <span style="color:#0d6efd;"> Mr B Hospital </span></h2>
+        <p style="text-align: justify; font-size: 17px;">A state-of-the art modern facility in the heart of the Gujarat state, it is spread over 10 acres and has a built-up area of over 440000 square feet. Currently the hospital has 300+ beds with a capacity to expand to 400 beds.</p>
+        <p style="text-align: justify; font-size: 17px;">Unity Hospital, Ahmedabad is a tertiary care flagship unit of the Unity Hospitals Group.The Hospital focuses on centres of excellence like Cardiac Sciences, Neuro Sciences, Orthopaedics including Knee Replacement, Hip Replacement and Spine Surgery, Cancer, Emergency Medicine and Solid Organ Transplants besides the complete range of more than 35 allied medical disciplines under the same roof.</p> 
+        <p style="text-align: justify; font-size: 17px;"> Unity Hospital, Ahmedabad provides holistic healthcare that includes prevention, treatment, rehabilitation and health education for patients, their families and clients by touching their lives.</p> <br>
+        <div class="heroLinks dflex-wrap align-items-center">
+            <a class="custom-link me-4 fs-4" href="#about" data-hover="Read More">Read More</a>   
+        </div>
+    </div>
+    <div class="col-md-6 overflow-h">
+        <img style=" margin-left: 30px;" src="{% static 'images\gallery\blob (4).jpeg' %}" alt="">
+    </div>
+    </div>
+    </div>
+      
+<!-- footer  -->
+        <footer class="site-footer section-padding " id="contact">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 me-auto col-12">
+                        <h5 class="mb-lg-4 mb-3">Opening Hours</h5>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex">
+                                Sunday : Closed
+                            </li>
+
+                            <li class="list-group-item d-flex">
+                                Monday, Tuesday - Firday
+                                <span>8:00 AM - 3:30 PM</span>
+                            </li>
+
+                            <li class="list-group-item d-flex">
+                                Saturday
+                                <span>10:30 AM - 5:30 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                        <h5 class="mb-lg-4 mb-3">Our Clinic</h5>
+
+                        <p><a href="mailto:hello@company.co">hello@company.co</a><p>
+
+                        <p>123 Digital Art Street, San Diego, CA 92123</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                        <h5 class="mb-lg-4 mb-3">Socials</h5>
+
+                        <ul class="social-icon">
+                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                        <p class="copyright-text">Copyright © Medic Care 2021 
+                        <br><br>Design: <a href="" target="_parent">TemplateMo</a></p>
+                    </div>
+
+                </div>
+            </section>
+        </footer>
+
+    
+{% endblock %}     

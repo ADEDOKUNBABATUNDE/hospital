@@ -1,0 +1,155 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{% block main %}  
+
+
+
+
+
+{% load crispy_forms_tags %}  
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>HMS - Django</title>
+  <style type="text/css">
+   
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+
+<body>
+ 
+ 
+
+
+
+  <div class="container mx-auto text-center  "  style="margin-top: 100px;">
+    <h2 class="text-center mb-5">Doctor signup</h2>
+    <form method="post" class="fw-bold" >
+      {% csrf_token %}
+      {{form|crispy}}
+  
+            <input type="submit" value="Register" class="btnSubmit">
+  
+  
+  
+  
+  
+            <div class="text-center mt-4">Already have an account? <a href="{% url 'doctorlogin' %}">Login here</a></div>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br><br><br><br><br><br>
+  <!--  -->
+ <!-- footer  -->
+  <footer class="site-footer section-padding" id="contact">
+      <div class="container">
+          <div class="row">
+ 
+              <div class="col-lg-5 me-auto col-12">
+                  <h5 class="mb-lg-4 mb-3">Opening Hours</h5>
+ 
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex">
+                          Sunday : Closed
+                      </li>
+ 
+                      <li class="list-group-item d-flex">
+                          Monday, Tuesday - Firday
+                          <span>8:00 AM - 3:30 PM</span>
+                      </li>
+ 
+                      <li class="list-group-item d-flex">
+                          Saturday
+                          <span>10:30 AM - 5:30 PM</span>
+                      </li>
+                  </ul>
+              </div>
+ 
+              <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                  <h5 class="mb-lg-4 mb-3">Our Clinic</h5>
+ 
+                  <p><a href="mailto:hello@company.co">hello@company.co</a><p>
+ 
+                  <p>123 Digital Art Street, San Diego, CA 92123</p>
+              </div>
+ 
+              <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                  <h5 class="mb-lg-4 mb-3">Socials</h5>
+ 
+                  <ul class="social-icon">
+                      <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+ 
+                      <li><a href="#" class="social-icon-link bi-twitter"></a></li>
+ 
+                      <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+ 
+                      <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                  </ul>
+              </div>
+ 
+              <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                  <p class="copyright-text">Developed by: Adedokun Babatunde
+                  </p>
+              </div>
+ 
+          </div>
+      </section>
+  </footer>
+ 
+
+
+ {% endblock %}
+</body>
+
+
+</html>

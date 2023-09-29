@@ -1,0 +1,62 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Mr B Hospital</title>
+
+        <!-- CSS FILES -->        
+        
+        <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+       
+        
+      
+        <link href="{% static 'css/templatemo-medic-care.css'%}" rel="stylesheet">
+        
+
+
+
+    </head>
+    <style>
+         #id:hover{
+            color:#0d6efd;
+            
+        }
+        #id:focus{
+            color: #0d6efd;
+        }
+
+    </style>
+    
+    <body id="top">
+      
+
+
+
+
+  {% block main %}
+
+
+  {% endblock %}
+
+  
+        <script src="{% static 'js/jquery.min.js'%}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'js/scrollspy.min.js'%}"></script>
+        <script src="{% static 'js/custom.js'%}"></script>
+        <script>
+            $(document).ready(function() {
+                // Automatically close the alert after 5 seconds (5000 milliseconds)
+                $(".alert").delay(2000).fadeOut("slow");
+            });
+          </script>
+       
+
+    </body>
+</html>       

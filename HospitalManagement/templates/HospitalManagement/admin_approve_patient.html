@@ -1,0 +1,61 @@
+{% extends 'admin_base.html' %}
+
+
+{% load static %}
+
+
+{% block main %}
+
+
+<head>
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading mt-4 mb-5">
+      <h4 class="panel-title">Patient Wants To Admit</h4>
+    </div>
+    <table class="table table-hover" id="dev-table" style="border: 1px solid rgb(105, 105, 105);">
+      <thead class="bg-primary">
+        <tr>
+          <th style="font-weight: 900;">Name</th>
+          <th style="font-weight: 900;">Profile </th>
+          <th style="font-weight: 900;">Symptoms</th>
+          <th style="font-weight: 900;">Contact</th>
+          <th style="font-weight: 900;">Address</th>
+          <th style="font-weight: 900;">Approve</th>
+          <th style="font-weight: 900;">Reject</th>
+        </tr>
+      </thead>
+      {% for p in patients %}
+      <tr>
+        <td> {{p.name}}</td>
+        <td> <img src="{{p.image.url}}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td>{{p.symptoms}}</td>
+        <td>{{p.mobile}}</td>
+        <td>{{p.address}}</td>
+        <td><a class="btn btn-success btn-xs" href="{% url 'approve_patient' p.id  %}"><span class="glyphicon glyphicon-ok"></span>Approve</a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'reject_patient' p.id  %}"><span class="glyphicon glyphicon-trash"></span>Reject</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+
+</div>
+
+
+{% endblock  %}

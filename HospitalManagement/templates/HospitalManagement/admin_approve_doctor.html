@@ -1,0 +1,61 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block main %}
+
+
+
+<head>
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading mt-4 mb-5">
+      <h4 class="panel-title mb-5">Doctors &nbsp Applied For Registration</h4>
+    </div>
+    <table class="table table-hover" id="dev-table" style="border: 1px solid rgb(105, 105, 105);">
+      <thead class="bg-primary">
+        <tr>
+          <th style="font-weight: 900;">Name</th>
+          <!-- <th>Profile Picture</th> -->
+          <th style="font-weight: 900;">Contact</th>
+          <th style="font-weight: 900;">Address</th>
+          <th style="font-weight: 900;">specialization</th>
+          <th style="font-weight: 900;" >Approve</th>
+          <th style="font-weight: 900;">Reject</th>
+        </tr>
+      </thead>
+  {% for d in doctors %}
+      <tr>
+        <td> {{d.name}}</td>
+        <!-- <td> <img src="{{d.image.url}}" alt="Profile Pic" height="40px" width="40px" /> </td> -->
+        <td>{{d.mobile}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.sepcialization}}</td>
+        <td><a class="btn btn-success btn-xs" href="{% url 'approve_doctor' d.id  %}"><span class=""></span>Approve</a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'reject_doctor' d.id  %}"><span class=""></span>Reject</a></td>
+      </tr>
+  {% endfor %}
+    </table>
+  </div>
+
+
+</div>
+
+
+{% endblock  %}

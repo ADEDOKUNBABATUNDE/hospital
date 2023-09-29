@@ -1,0 +1,49 @@
+{% extends 'admin_base.html' %}
+
+{% load static %}
+{% block main %}
+
+<head>
+
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="panel panel-primary mt-4 mb-5">
+    <div class="panel-heading">
+      <h6 class="panel-title mt-5">Specialization & Doctors</h6>
+    </div>
+    <table class="table table-hover mt-5" id="dev-table" style="border: 1px solid rgb(105, 105, 105);">
+      <thead class="bg-primary o">
+        <tr>
+          <th  style="font-weight: 900;">specialization</th>
+          <th  style="font-weight: 900;">Doctor Name</th>
+          <th  style="font-weight: 900;">Contact</th>
+        </tr>
+      </thead>
+      {% for d in doctors %}
+      <tr>
+        <td>{{d.specialization}}</td>
+        <td> {{d.name}}</td>
+        <td>{{d.mobile}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+
+
+{% endblock  %}
